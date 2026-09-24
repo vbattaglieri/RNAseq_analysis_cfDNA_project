@@ -1,16 +1,16 @@
-# RNA-seq: HCT116 WT vs DKO
+# RNA-seq analysis of HCT116 WT vs DKO
 
 Analysis code for a bulk RNA-seq comparison of the colorectal cancer cell line
 **HCT116 wild-type (WT)** versus its **DNMT1/DNMT3B double-knockout (DKO)**
 derivative, 3 biological replicates per condition.
 
-This repository showcases the **scripts** used in the study — from raw-read QC
+This repository contains the **scripts** used in the study, from raw-read QC
 and quantification through differential expression and gene-set enrichment.
 It is **code-only**: raw sequencing data and large intermediate files are not
 tracked here (see [Data availability](#data-availability)).
 
 > Part of a published project. If you use or refer to this code, please cite the
-> associated publication *(add citation / DOI here)*.
+> associated publication *Pessei, V., Macagno, M., Mariella, E. et al. DNA demethylation triggers cell free DNA release in colorectal cancer cells. Genome Med 16, 118 (2024). https://doi.org/10.1186/s13073-024-01386-5*.
 
 ## Experimental design
 
@@ -77,8 +77,8 @@ FASTQ ──▶ FastQC ──▶ RSEM (STAR) quantification ──▶ RSeQC ─�
 
 ## Data availability
 
-Raw and processed sequencing data are deposited in a public repository
-*(add GEO/SRA/ArrayExpress accession here)*. MSigDB gene-set (`.gmt`) files are
+Raw and processed sequencing data are deposited and available in the European Nucleotide Archive (ENA) with PRJEB33045 (https://www.ebi.ac.uk/ena/browser/view/PRJEB33045), PRJEB33640 (https://www.ebi.ac.uk/ena/browser/view/PRJEB33640), and PRJEB57691 (https://www.ebi.ac.uk/ena/browser/view/PRJEB57691) accession codes. 
+MSigDB gene-set (`.gmt`) files are
 **not redistributed** — download them from
 [MSigDB](https://www.gsea-msigdb.org/gsea/msigdb) under their license.
 
