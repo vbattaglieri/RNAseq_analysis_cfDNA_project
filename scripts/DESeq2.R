@@ -132,7 +132,7 @@ dds_TMZ_lfcShrink <- lfcShrink(dds_TMZ, coef="condition_TMZ_vs_NT", type="apeglm
 dds_FOXIR_lfcShrink <- lfcShrink(dds_FOXIR, coef="condition_FOXIR_vs_NT", type="apeglm")
 dds_TEMIRI_lfcShrink <- lfcShrink(dds_TEMIRI, coef="condition_TEMIRI_vs_NT", type="apeglm")
 
-#salvo i risultati relativi a differential expression di ciascuna condizione rispetto al T0
+#Save the differential expression results for each condition compared with T0
 #results_DDT_vs_NT <- results(dds_DDT_lfcShrink, contrast = c("condition", "DDT", "NT"))
 #results_FOXIR_vs_NT <- results(dds_FOXIR_lfcShrink, contrast = c("condition", "FOXIR", "NT"))
 #results_DD_vs_NT <- results(dds_DD_lfcShrink, contrast = c("condition", "DD", "NT"))
@@ -365,112 +365,9 @@ dev.off()
 #        theme_minimal()
 #dev.off()
 
-print("FINE ANALISI")
-
-
-
+print("End of analysis")
 
 q()
-
-
-#rimuovo tutti gli NA
-#results_DDT_vs_T0 <- na.omit(results_DDT_vs_T0)
-#results_DD_vs_T0 <- na.omit(results_DD_vs_T0)
-#results_TMZ_vs_T0 <- na.omit(results_TMZ_vs_T0)
-#results_NT_vs_T0 <- na.omit(results_NT_vs_T0)
-#results_TEMIRI_vs_T0 <- na.omit(results_TEMIRI_vs_T0)
-#results_FOXIR_vs_T0 <- na.omit(results_FOXIR_vs_T0)
-
-rownames(results_DDT_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_DDT_vs_T0))
-rownames(results_DD_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_DD_vs_T0))
-rownames(results_NT_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_NT_vs_T0))
-rownames(results_TMZ_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_TMZ_vs_T0))
-rownames(results_FOXIR_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_FOXIR_vs_T0))
-rownames(results_TEMIRI_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_TEMIRI_vs_T0))
-
-head(results_DDT_vs_T0)
-
-#mi seleziono i geni statisticamente over/down-espressi per ciascuna condizione
-
-#results_NT_vs_T0_regulated = results_NT_vs_T0[results_NT_vs_T0$padj < 0.05 & results_NT_vs_T0$log2FoldChange < -1 | results_NT_vs_T0$log2FoldChange > 1 ,]
-#results_TMZ_vs_T0_regulated = results_TMZ_vs_T0[results_TMZ_vs_T0$padj < 0.05 & results_TMZ_vs_T0$log2FoldChange < -1 | results_TMZ_vs_T0$log2FoldChange > 1 ,]
-#results_DD_vs_T0_regulated = results_DD_vs_T0[results_DD_vs_T0$padj < 0.05 & results_DD_vs_T0$log2FoldChange < -1 | results_DD_vs_T0$log2FoldChange > 1 ,]
-#results_FOXIR_vs_T0_regulated = results_FOXIR_vs_T0[results_FOXIR_vs_T0$padj < 0.05 & results_FOXIR_vs_T0$log2FoldChange < -1 | results_FOXIR_vs_T0$log2FoldChange > 1 ,]
-#results_DDT_vs_T0_regulated = results_DDT_vs_T0[results_DDT_vs_T0$padj < 0.05 & results_DDT_vs_T0$log2FoldChange < -1 | results_DDT_vs_T0$log2FoldChange > 1 ,]
-#results_TEMIRI_vs_T0_regulated = results_TEMIRI_vs_T0[results_TEMIRI_vs_T0$padj < 0.05 & results_TEMIRI_vs_T0$log2FoldChange < -1 | results_TEMIRI_vs_T0$log2FoldChange > 1 ,]
-
-#mi listo i geni stat signif
-
-#results_FOXIR_vs_T0_regulated = results_FOXIR_vs_T0[results_FOXIR_vs_T0$padj < 0.05 & results_FOXIR_vs_T0$log2FoldChange < -1 | results_FOXIR_vs_T0$log2FoldChange > 1 ,]
-#results_DDT_vs_T0_regulated = results_DDT_vs_T0[results_DDT_vs_T0$padj < 0.05 & results_DDT_vs_T0$log2FoldChange < -1 | results_DDT_vs_T0$log2FoldChange > 1 ,]
-#results_TEMIRI_vs_T0_regulated = results_TEMIRI_vs_T0[results_TEMIRI_vs_T0$padj < 0.05 & results_TEMIRI_vs_T0$log2FoldChange < -1 | results_TEMIRI_vs_T0$log2FoldChange > 1 ,]
-
-#mi listo i geni stat signif
-
-
-q()
-
-
-#rimuovo tutti gli NA
-#results_DDT_vs_T0 <- na.omit(results_DDT_vs_T0)
-#results_DD_vs_T0 <- na.omit(results_DD_vs_T0)
-#results_TMZ_vs_T0 <- na.omit(results_TMZ_vs_T0)
-#results_NT_vs_T0 <- na.omit(results_NT_vs_T0)
-#results_TEMIRI_vs_T0 <- na.omit(results_TEMIRI_vs_T0)
-#results_FOXIR_vs_T0 <- na.omit(results_FOXIR_vs_T0)
-
-rownames(results_DDT_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_DDT_vs_T0))
-rownames(results_DD_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_DD_vs_T0))
-rownames(results_NT_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_NT_vs_T0))
-rownames(results_TMZ_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_TMZ_vs_T0))
-rownames(results_FOXIR_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_FOXIR_vs_T0))
-rownames(results_TEMIRI_vs_T0) <-  gsub("\\.[0-9]*$", "", rownames(results_TEMIRI_vs_T0))
-
-head(results_DDT_vs_T0)
-
-#mi seleziono i geni statisticamente over/down-espressi per ciascuna condizione
-
-#results_NT_vs_T0_regulated = results_NT_vs_T0[results_NT_vs_T0$padj < 0.05 & results_NT_vs_T0$log2FoldChange < -1 | results_NT_vs_T0$log2FoldChange > 1 ,]
-#results_TMZ_vs_T0_regulated = results_TMZ_vs_T0[results_TMZ_vs_T0$padj < 0.05 & results_TMZ_vs_T0$log2FoldChange < -1 | results_TMZ_vs_T0$log2FoldChange > 1 ,]
-#results_DD_vs_T0_regulated = results_DD_vs_T0[results_DD_vs_T0$padj < 0.05 & results_DD_vs_T0$log2FoldChange < -1 | results_DD_vs_T0$log2FoldChange > 1 ,]
-#results_FOXIR_vs_T0_regulated = results_FOXIR_vs_T0[results_FOXIR_vs_T0$padj < 0.05 & results_FOXIR_vs_T0$log2FoldChange < -1 | results_FOXIR_vs_T0$log2FoldChange > 1 ,]
-#results_DDT_vs_T0_regulated = results_DDT_vs_T0[results_DDT_vs_T0$padj < 0.05 & results_DDT_vs_T0$log2FoldChange < -1 | results_DDT_vs_T0$log2FoldChange > 1 ,]
-#results_TEMIRI_vs_T0_regulated = results_TEMIRI_vs_T0[results_TEMIRI_vs_T0$padj < 0.05 & results_TEMIRI_vs_T0$log2FoldChange < -1 | results_TEMIRI_vs_T0$log2FoldChange > 1 ,]
-
-#mi listo i geni stat signif
-
-#de_genes_DDT_vs_T0 <- rownames(results_DDT_vs_T0_regulated)
-#de_genes_DD_vs_T0 <- rownames(results_DD_vs_T0_regulated)
-#de_genes_FOXIR_vs_T0 <- rownames(results_FOXIR_vs_T0_regulated)
-#de_genes_NT_vs_T0 <- rownames(results_NT_vs_T0_regulated)
-#de_genes_TMZ_vs_T0 <- rownames(results_TMZ_vs_T0_regulated)
-#de_genes_TEMIRI_vs_T0 <- rownames(results_TEMIRI_vs_T0_regulated)
-
-#all_de_genes <- c(de_genes_DDT_vs_T0, de_genes_FOXIR_vs_T0, de_genes_DD_vs_T0, de_genes_NT_vs_T0, de_genes_TEMIRI_vs_T0, de_genes_TMZ_vs_T0)
-#all_de_genes <- unique(all_de_genes)
-
-#annoto per symbol e entrezID
-
-library("AnnotationDbi")
-library("org.Mm.eg.db")
-
-columns(org.Mm.eg.db)
-
-results_DDT_vs_T0$symbol <- mapIds(org.Mm.eg.db, keys=row.names(results_DDT_vs_T0), column="SYMBOL", keytype="ENSEMBL", multiVals="first")
-results_DD_vs_T0$symbol <- mapIds(org.Mm.eg.db, keys=row.names(results_DD_vs_T0), column="SYMBOL", keytype="ENSEMBL", multiVals="first")
-results_NT_vs_T0$symbol <- mapIds(org.Mm.eg.db, keys=row.names(results_NT_vs_T0), column="SYMBOL", keytype="ENSEMBL", multiVals="first")
-gene_list_TEMIRI <-na.omit(original_gene_list_TEMIRI)
-gene_list_TMZ <-na.omit(original_gene_list_TMZ)
-gene_list_FOXIR <-na.omit(original_gene_list_FOXIR)
-gene_list_DD <-na.omit(original_gene_list_DD)
-
-gene_list_DDT = sort(gene_list_DDT, decreasing = TRUE)
-gene_list_TMZ = sort(gene_list_TMZ, decreasing = TRUE)
-gene_list_FOXIR = sort(gene_list_FOXIR, decreasing = TRUE)
-gene_list_NT = sort(gene_list_NT, decreasing = TRUE)
-gene_list_TEMIRI = sort(gene_list_TEMIRI, decreasing = TRUE)
-gene_list_DD = sort(gene_list_DD, decreasing = TRUE)
-
 
 
 
